@@ -1,0 +1,12 @@
+
+url: https://floating-beach-32939.herokuapp.com/play
+
+
+git: git@github.com:bengaara/company-quiz.git
+
+//git archive master -o code.tgz
+
+note:accepted input is assued to be [xo ]   only - that is x o or space
+example url:
+https://floating-beach-32939.herokuapp.com/play?board=xxox%20%20oox
+ http://localhost:3000/play?board=xxox%20%20oox
