@@ -10,3 +10,84 @@ note:accepted input is assued to be [xo ]   only - that is x o or space
 example url:
 https://floating-beach-32939.herokuapp.com/play?board=xxox%20%20oox
  http://localhost:3000/play?board=xxox%20%20oox
+ 
+ 
+ 
+ 
+ exam feedback:
+ 
+ Hi Ben,
+
+Please see feedback from project below:
+
+- The validation is good. It catches all the invalid cases we have in our tests.
+- However, not enough progress was made on the strategy portion. E.g. it doesn't successfully complete the row for boards like "oo+xx++++"
+- The `winblock` function has a lot of code duplication and doesn't correctly check all rows and columns (e.g. the rows section doesn't check the middle or bottom row)
+- The `isGameOver` function is incorrect. The row formula is not checking all rows  but is checking 3 windows within the 1d board. (first it's checking [0,1, 2] then [1,2,3] then [2,3,4]). (E.g. in "oo+xxx+++", x has won, but the AI plays on anyway
+
+I hope this gives you insight.
+
+Apologies that we didn't address your concerns as promptly.
+
+Nneka
+
+
+Show original message
+
+
+Ben <beunra@yahoo.com>
+To:
+Nneka Madubugwu
+
+Tue, Apr 13 at 12:51 AM
+
+Thank you for the feedback!
+
+I do however feel your feedback was pretty strict/harsh.
+Concerning issues pointed out:
+
+"strategy portion. E.g. it doesn't successfully complete the row for boards like "oo+xx++++""
+
+a minor bug in the code was preventing this. must have missed it in my rush:
+changing just one line in the isGameOver function fixes this "
+ for(var x=0;x<9;x+=3){
+
+ The `winblock` function has a lot of code duplication and doesn't correctly check all rows and columns (e.g. the rows section doesn't check the middle or bottom row)
+
+This statement is false - if you observe closely.. its not the first row thats checked but all the rows.
+Their is a for loop and an incremental variable x to help iterate through the rows and columns.
+for(var x=0;x<9;x+=3){
+
+it first checks horizontal - the rows
+then verticals - ie column wise
+and lastly the 2 diagonals
+
+The `isGameOver` function is incorrect. The row formula is not checking all rows  but is checking 3 windows within the 1d board. (first it's checking [0,1, 2] then [1,2,3] then [2,3,4]). (E.g. in "oo+xxx+++", x has won, but the AI plays on anyway
+
+this bug is fixed by changing just one line of code as mentioned in step one. This was the only part overlooked 
+line 114
+line for(var x=0;x<9;x+=3){
+
+probably occurred while code cleaning.
+
+Just that line change would greatly alte the results.
+
+Am grateful for the challenge offered and for the review given.
+
+Wishing you all the best in your search for developers to join your team. If more opportunities pop up i will give it a short 
+
+
+Sincerely,
+
+Benson
+
+Ben, thanks for the feedback on the feedback.
+
+I'm sure you may have come across this on our website but two of some of our important values at Wave are- Embarrassing honesty and Maximizing the rate of our learning. I say this because it was important for us to give you the most honest and helpful feedback about what went wrong and what could have been done differently with the project. We do not consider useful feedback strict or harsh, especially as we generally accept candidates in our process again after 6+ months of interviewing 
+When candidates are able to incorporate the lessons learnt, they are usually able to make it in the process the second time around.
+
+I hope that you find this feedback useful at least.
+
+Thanks again and best of luck with your search.
+
+Nneka
